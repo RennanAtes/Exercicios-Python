@@ -16,20 +16,25 @@ Entrada: nums = [2,7,11,15], target = 9
 
 '''
 
-nums = [3,5,1,6,8,4,2]
-target = 12
+class Solution(object):
+    def twoSum(nums,target):
+        saida = []
+        for i in range(0,len(nums)):
 
-for i in range(0,len(nums)):
+            num1 = nums[i]
 
-    num1 = nums[i]
+            if not i == len(nums)-1:
 
-    if not i == len(nums)-1:
+                i += 1
+                num2 = nums[i]
+                soma = num1 + num2
 
-        i += 1
-        num2 = nums[i]
-        soma = num1 + num2
-
-        if soma == target:
-            
-            saida = [nums[i-1], nums[i]]
-            print(saida)
+                if soma == target:
+                    saida.append(num1)
+                    saida.append(num2)
+                    return saida
+                
+nums = [2,1,3,7,5]  
+target= 12
+teste = Solution
+print(teste.twoSum(nums,target))
